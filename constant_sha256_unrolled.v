@@ -1,9 +1,9 @@
 module constant_sha256_unrolled (
-    input [4:0] counter,     // Bộ đếm 0-31 (tên trong hình của bạn)
-    output reg [31:0] k,       // Hằng số cho vòng chẵn (tên trong hình)
-    output reg [31:0] k_plus // Hằng số cho vòng lẻ (tên trong hình)
+    input [4:0] counter,     // Bộ đếm 0-31 
+    output reg [31:0] k,       // Hằng số cho vòng chẵn 
+    output reg [31:0] k_plus // Hằng số cho vòng lẻ
 );
-    // Đây là logic tổ hợp, hoạt động như một ROM
+    // Đây là logic tổ hợp
     always @(*) begin
         // Gán giá trị 64-bit {k, k_plus}
         case (counter)
@@ -43,4 +43,5 @@ module constant_sha256_unrolled (
         endcase
     end
     
+
 endmodule
